@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import { PropTypes } from 'prop-types';
 import { getHours } from '../constants';
-// import windDirection from '../assets/images/direction.png';
+import windDirection from '../assets/images/direction.png';
 
 const ForecastByTime = ({ data, timezoneData }) => {
 	let i = 1;
@@ -169,7 +169,7 @@ const ForecastByTime = ({ data, timezoneData }) => {
 								data ? data.list[i + 6].wind.deg : null
 							}deg)`,
 						}}
-						src={data ? `./src/assets/images/direction.png` : null}
+						src={data ? windDirection : null}
 						alt={data ? data.list[i].weather[0].description : null}
 					/>
 					<Typography sx={{ fontSize: '22px' }}>
@@ -186,7 +186,7 @@ const ForecastByTime = ({ data, timezoneData }) => {
 								data ? data.list[i + 6].wind.deg : null
 							}deg)`,
 						}}
-						src={data ? `./src/assets/images/direction.png` : null}
+						src={data ? windDirection : null}
 						alt={data ? data.list[i + 1].weather[0].description : null}
 					/>
 					<Typography sx={{ fontSize: '22px' }}>
@@ -203,7 +203,7 @@ const ForecastByTime = ({ data, timezoneData }) => {
 								data ? data.list[i + 6].wind.deg : null
 							}deg)`,
 						}}
-						src={data ? `./src/assets/images/direction.png` : null}
+						src={data ? windDirection : null}
 						alt={data ? data.list[i + 2].weather[0].description : null}
 					/>
 					<Typography sx={{ fontSize: '22px' }}>
@@ -220,7 +220,7 @@ const ForecastByTime = ({ data, timezoneData }) => {
 								data ? data.list[i + 6].wind.deg : null
 							}deg)`,
 						}}
-						src={data ? `./src/assets/images/direction.png` : null}
+						src={data ? windDirection : null}
 						alt={data ? data.list[i + 3].weather[0].description : null}
 					/>
 					<Typography sx={{ fontSize: '22px' }}>
@@ -237,7 +237,7 @@ const ForecastByTime = ({ data, timezoneData }) => {
 								data ? data.list[i + 6].wind.deg : null
 							}deg)`,
 						}}
-						src={data ? `./src/assets/images/direction.png` : null}
+						src={data ? windDirection : null}
 						alt={data ? data.list[i + 4].weather[0].description : null}
 					/>
 					<Typography sx={{ fontSize: '22px' }}>
@@ -254,7 +254,7 @@ const ForecastByTime = ({ data, timezoneData }) => {
 								data ? data.list[i + 6].wind.deg : null
 							}deg)`,
 						}}
-						src={data ? `./src/assets/images/direction.png` : null}
+						src={data ? windDirection : null}
 						alt={data ? data.list[i + 5].weather[0].description : null}
 					/>
 					<Typography sx={{ fontSize: '22px' }}>
@@ -271,7 +271,7 @@ const ForecastByTime = ({ data, timezoneData }) => {
 								data ? data.list[i + 6].wind.deg : null
 							}deg)`,
 						}}
-						src={data ? `./src/assets/images/direction.png` : null}
+						src={data ? windDirection : null}
 						alt={data ? data.list[i + 6].weather[0].description : null}
 					/>
 					<Typography sx={{ fontSize: '22px' }}>

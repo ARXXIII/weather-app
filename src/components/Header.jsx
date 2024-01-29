@@ -3,7 +3,7 @@ import { Typography } from '@mui/material';
 import SearchBar from './SearchBar';
 import { PropTypes } from 'prop-types';
 
-const Header = ({ onSearchChange }) => {
+const Header = ({ onSearchChange, userLocation }) => {
 	return (
 		<>
 			<header className='flex justify-between items-center mx-10 my-16'>
@@ -16,7 +16,7 @@ const Header = ({ onSearchChange }) => {
 					AR23 / Weather App
 				</Typography>
 				<SearchBar handleSearch={onSearchChange} />
-				<CurrentLocation />
+				<CurrentLocation userLocationBtn={userLocation} />
 			</header>
 		</>
 	);
@@ -24,6 +24,7 @@ const Header = ({ onSearchChange }) => {
 
 Header.propTypes = {
 	onSearchChange: PropTypes.any,
+	userLocation: PropTypes.any,
 };
 
 export default Header;
