@@ -1,6 +1,7 @@
 import CurrentLocation from './CurrentLocation';
-import { Typography } from '@mui/material';
+import LanguageSelector from './LanguageSelector';
 import SearchBar from './SearchBar';
+import { Typography } from '@mui/material';
 import { PropTypes } from 'prop-types';
 
 const Header = ({ onSearchChange, userLocation }) => {
@@ -17,6 +18,7 @@ const Header = ({ onSearchChange, userLocation }) => {
 				</Typography>
 				<SearchBar handleSearch={onSearchChange} />
 				<CurrentLocation userLocationBtn={userLocation} />
+				<LanguageSelector />
 			</header>
 		</>
 	);

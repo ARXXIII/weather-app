@@ -1,8 +1,11 @@
 import LocationSearchingOutlinedIcon from '@mui/icons-material/LocationSearchingOutlined';
 import { SvgIcon } from '@mui/material';
 import { PropTypes } from 'prop-types';
+import { useTranslation } from 'react-i18next';
 
 const CurrentLocation = ({ userLocationBtn }) => {
+	const { t } = useTranslation();
+
 	return (
 		<>
 			<button
@@ -13,7 +16,7 @@ const CurrentLocation = ({ userLocationBtn }) => {
 					component={LocationSearchingOutlinedIcon}
 					sx={{ marginRight: '5px', fontSize: '20px' }}
 				/>
-				Current Location
+				{t('currLocationBtn')}
 			</button>
 		</>
 	);

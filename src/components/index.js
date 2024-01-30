@@ -8,6 +8,7 @@ import FiveDayForecast from "./FiveDayForecast";
 import CustomWeatherCard from "./CustomWeatherCard";
 import AirQualityCard from "./AirQualityCard";
 import SunriseSunset from "./SunriseSunset";
+import LanguageSelector from "./LanguageSelector";
 
 export {
     Header,
@@ -20,4 +21,5 @@ export {
     CustomWeatherCard,
     AirQualityCard,
     SunriseSunset,
+    LanguageSelector
 }

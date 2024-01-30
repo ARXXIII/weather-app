@@ -15,10 +15,6 @@ body {
 	background-color: #131216;
 }
 
-.css-dj7oi8-control:hover {
-	border-color: transparent;
-}
-
 ::-webkit-scrollbar {
 	width: 0.6em;
 	background-color: #131216;
@@ -31,6 +27,22 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
 	background-color: #b6a0e6;
+}
+
+.lang-changer__btn.selected {
+	color: #000;
+	background-color: #b6a0e6;
+}
+
+.lang-changer__btn {
+	color: #fff;
+	background-color: #1d1b1f;
+	transition: 0.3s ease 0s;
+	border: 1px solid transparent;
+}
+
+.lang-changer__btn:hover {
+	border: 1px solid #b6a0e6;
 }
 
 .forecast-highlights__grid {

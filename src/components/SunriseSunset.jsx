@@ -3,8 +3,11 @@ import WbSunnyOutlinedIcon from '@mui/icons-material/WbSunnyOutlined';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import { PropTypes } from 'prop-types';
 import { getTime } from '../constants';
+import { useTranslation } from 'react-i18next';
 
 const SunriseSunset = ({ sunriseSunsetData }) => {
+	const { t } = useTranslation();
+
 	return (
 		<Box
 			component='section'
@@ -15,7 +18,9 @@ const SunriseSunset = ({ sunriseSunsetData }) => {
 				backgroundColor: '#1A191D',
 			}}
 		>
-			<Typography sx={{ color: '#6C6B71' }}>Sunrise & Sunset</Typography>
+			<Typography sx={{ color: '#6C6B71' }}>
+				{t('sunrise')} & {t('sunset')}
+			</Typography>
 			<Box
 				sx={{
 					display: 'flex',
@@ -33,7 +38,7 @@ const SunriseSunset = ({ sunriseSunsetData }) => {
 				/>
 				<Box>
 					<Typography sx={{ fontSize: '14px', color: '#6C6B71' }}>
-						Sunrise
+						{t('sunrise')}
 					</Typography>
 					<Typography
 						sx={{
@@ -57,7 +62,7 @@ const SunriseSunset = ({ sunriseSunsetData }) => {
 				/>
 				<Box>
 					<Typography sx={{ fontSize: '14px', color: '#6C6B71' }}>
-						Sunset
+						{t('sunset')}
 					</Typography>
 					<Typography
 						sx={{

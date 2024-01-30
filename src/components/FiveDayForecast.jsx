@@ -1,9 +1,12 @@
 import { Typography } from '@mui/material';
 import { PropTypes } from 'prop-types';
 import { monthNames, weekDayNames } from '../constants';
+import { useTranslation } from 'react-i18next';
 
 const FiveDayForecast = ({ data }) => {
 	let i = 7;
+
+	const { t } = useTranslation();
 
 	return (
 		<>
@@ -11,11 +14,10 @@ const FiveDayForecast = ({ data }) => {
 				sx={{
 					margin: '40px 0',
 					fontSize: 'h6.fontSize',
-					textTransform: 'capitalize',
 					color: '#FFFFFF',
 				}}
 			>
-				5 day forecast
+				{t('fiveDayForecastHeading')}
 			</Typography>
 			<div
 				className='five-day-forecast__grid'

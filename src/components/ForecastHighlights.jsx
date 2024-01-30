@@ -7,8 +7,11 @@ import DeviceThermostatOutlinedIcon from '@mui/icons-material/DeviceThermostatOu
 import AirQualityCard from './AirQualityCard';
 import SunriseSunset from './SunriseSunset';
 import { PropTypes } from 'prop-types';
+import { useTranslation } from 'react-i18next';
 
 const ForecastHighlights = ({ data, airPollutionData }) => {
+	const { t } = useTranslation();
+
 	return (
 		<>
 			<Box
@@ -20,7 +23,7 @@ const ForecastHighlights = ({ data, airPollutionData }) => {
 				}}
 			>
 				<Typography sx={{ marginBottom: '15px', fontSize: 'h6.fontSize' }}>
-					Todays Highlights
+					{t('todaysHighlightsHeading')}
 				</Typography>
 				<div className='forecast-highlights__grid'>
 					<div className='forecast-highlights__1'>
@@ -31,7 +34,7 @@ const ForecastHighlights = ({ data, airPollutionData }) => {
 					</div>
 					<div className='forecast-highlights__3'>
 						<CustomWeatherCard
-							title='Humidity'
+							title={t('humidity')}
 							cardIcon={WaterDropOutlinedIcon}
 							Data={data ? data.main.humidity : null}
 							meaning={'%'}
@@ -39,7 +42,7 @@ const ForecastHighlights = ({ data, airPollutionData }) => {
 					</div>
 					<div className='forecast-highlights__4'>
 						<CustomWeatherCard
-							title='Pressure'
+							title={t('pressure')}
 							cardIcon={WaterOutlinedIcon}
 							Data={data ? data.main.pressure : null}
 							meaning={' hPa'}
@@ -47,7 +50,7 @@ const ForecastHighlights = ({ data, airPollutionData }) => {
 					</div>
 					<div className='forecast-highlights__5'>
 						<CustomWeatherCard
-							title='Visibility'
+							title={t('visibility')}
 							cardIcon={VisibilityOutlinedIcon}
 							Data={data ? Math.round(data.visibility / 1000) : null}
 							meaning={' km'}
@@ -55,7 +58,7 @@ const ForecastHighlights = ({ data, airPollutionData }) => {
 					</div>
 					<div className='forecast-highlights__6'>
 						<CustomWeatherCard
-							title='Feels Like'
+							title={t('feelsLike')}
 							cardIcon={DeviceThermostatOutlinedIcon}
 							Data={data ? Math.round(data.main.feels_like) : null}
 							meaning={'°C'}

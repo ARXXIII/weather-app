@@ -2,8 +2,11 @@ import { Box, SvgIcon, Typography } from '@mui/material';
 import AirOutlinedIcon from '@mui/icons-material/AirOutlined';
 import { PropTypes } from 'prop-types';
 import { aqiText } from '../constants';
+import { useTranslation } from 'react-i18next';
 
 const AirQualityCard = ({ airQualityData }) => {
+	const { t } = useTranslation();
+
 	return (
 		<Box
 			component='section'
@@ -20,8 +23,8 @@ const AirQualityCard = ({ airQualityData }) => {
 					alignItems: 'center',
 				}}
 			>
-				<Typography sx={{ color: '#6C6B71', textTransform: 'capitalize' }}>
-					air quality index
+				<Typography sx={{ color: '#6C6B71' }}>
+					{t('airQualityIndex')}
 				</Typography>
 				<Typography
 					className={`air-quality-type__badge air-quality-type__${

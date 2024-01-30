@@ -2,9 +2,12 @@ import { Box, Typography } from '@mui/material';
 import { PropTypes } from 'prop-types';
 import { getHours } from '../constants';
 import windDirection from '../assets/images/direction.png';
+import { useTranslation } from 'react-i18next';
 
 const ForecastByTime = ({ data, timezoneData }) => {
 	let i = 1;
+
+	const { t } = useTranslation();
 
 	return (
 		<>
@@ -15,7 +18,7 @@ const ForecastByTime = ({ data, timezoneData }) => {
 					color: '#FFFFFF',
 				}}
 			>
-				Forecast by Time
+				{t('forecastByTimeHeading')}
 			</Typography>
 			<Box
 				sx={{

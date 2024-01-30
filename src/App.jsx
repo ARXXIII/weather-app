@@ -120,27 +120,6 @@ const App = () => {
 					/>
 				</Box>
 			</Box>
-
-			{/* <div className='main__grid mx-20'>
-				<div className='forecast__item'>
-					<Forecast data={currentWeather} />
-				</div>
-				<div className='five-days-forecast__item'>
-					<FiveDayForecast data={forecast} />
-				</div>
-				<div className='forecast-highlights__item'>
-					<ForecastHighlights
-						data={currentWeather}
-						airPollutionData={airPollution}
-					/>
-				</div>
-				<div className='forecast-by-time__item'>
-					<ForecastByTime
-						data={forecast}
-						timezoneData={currentWeather ? currentWeather.timezone : null}
-					/>
-				</div>
-			</div> */}
 		</>
 	);
 };

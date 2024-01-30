@@ -3,8 +3,11 @@ import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import { PropTypes } from 'prop-types';
 import { getDate } from '../constants';
+import { useTranslation } from 'react-i18next';
 
 const Forecast = ({ data }) => {
+	const { t } = useTranslation();
+
 	return (
 		<>
 			<Box
@@ -16,7 +19,7 @@ const Forecast = ({ data }) => {
 				}}
 			>
 				<Typography sx={{ fontSize: 'h6.fontSize', letterSpacing: '0.05em' }}>
-					Now
+					{t('currWeatherHeading')}
 				</Typography>
 				<section className='flex justify-around  items-center'>
 					<Typography
