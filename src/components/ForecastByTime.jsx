@@ -13,7 +13,7 @@ const ForecastByTime = ({ data, timezoneData }) => {
 		<>
 			<Typography
 				sx={{
-					margin: '40px 0',
+					margin: '40px 0 20px 0',
 					fontSize: 'h6.fontSize',
 					color: '#FFFFFF',
 				}}

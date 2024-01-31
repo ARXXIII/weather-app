@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,7 +9,6 @@
 }
 
 body {
-	font-family: 'Roboto Slab', serif;
 	background-color: #131216;
 }
 
@@ -38,7 +35,7 @@ body {
 	color: #fff;
 	background-color: #1d1b1f;
 	transition: 0.3s ease 0s;
-	border: 1px solid transparent;
+	border: 1px solid #1d1b1f;
 }
 
 .lang-changer__btn:hover {

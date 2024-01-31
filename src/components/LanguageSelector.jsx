@@ -19,7 +19,7 @@ const LanguageSelector = () => {
 					<button
 						className={`lang-changer__btn ${
 							lng.code === i18n.language ? 'selected' : ''
-						}  rounded-full  font-semibold mx-2 px-4 py-2`}
+						}  rounded-full font-semibold mx-2 px-4 py-2`}
 						key={lng.code}
 						onClick={() => changeLanguage(lng.code)}
 					>

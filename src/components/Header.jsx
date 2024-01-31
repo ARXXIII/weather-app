@@ -1,7 +1,7 @@
 import CurrentLocation from './CurrentLocation';
 import LanguageSelector from './LanguageSelector';
 import SearchBar from './SearchBar';
-import { Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { PropTypes } from 'prop-types';
 
 const Header = ({ onSearchChange, userLocation }) => {
@@ -17,8 +17,16 @@ const Header = ({ onSearchChange, userLocation }) => {
 					AR23 / Weather App
 				</Typography>
 				<SearchBar handleSearch={onSearchChange} />
-				<CurrentLocation userLocationBtn={userLocation} />
-				<LanguageSelector />
+				<Box
+					sx={{
+						display: 'flex',
+						justifyContent: 'center',
+						alignItems: 'center',
+					}}
+				>
+					<CurrentLocation userLocationBtn={userLocation} />
+					<LanguageSelector />
+				</Box>
 			</header>
 		</>
 	);

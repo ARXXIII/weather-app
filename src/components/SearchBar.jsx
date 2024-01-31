@@ -35,7 +35,7 @@ const SearchBar = ({ handleSearch }) => {
 			width: '600px',
 			color: '#fff',
 			border: state.isFocused ? '1px solid #b6a0e6' : 'none',
-			borderRadius: '12px',
+			borderRadius: '9999px',
 			backgroundColor: '#1D1B1F',
 		}),
 		option: (provided, state) => ({
