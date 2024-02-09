@@ -48,7 +48,7 @@ const Forecast = ({ data }) => {
 						borderBottom: '2px solid #29282B',
 					}}
 				>
-					{data ? data.weather[0].description : null}
+					{data ? data.weather[0].main : null}
 				</Typography>
 				<Box sx={{ display: 'flex', margin: '15px 0' }}>
 					<SvgIcon
