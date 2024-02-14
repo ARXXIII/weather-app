@@ -89,7 +89,11 @@ const App = () => {
 
 	return (
 		<>
-			<Header onSearchChange={handleOnSearch} userLocation={userLocation} />
+			<Header
+				onSearchChange={handleOnSearch}
+				userLocation={userLocation}
+				data={currentWeather}
+			/>
 			<Box
 				sx={{
 					display: 'flex',

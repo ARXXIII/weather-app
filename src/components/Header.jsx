@@ -3,19 +3,24 @@ import LanguageSelector from './LanguageSelector';
 import SearchBar from './SearchBar';
 import { Box } from '@mui/material';
 import { PropTypes } from 'prop-types';
-import Logo from 'D:/My projects/ar23-weather-app/src/assets/images/logo.svg';
 
-const Header = ({ onSearchChange, userLocation }) => {
+const Header = ({ onSearchChange, userLocation, data }) => {
 	return (
 		<>
-			<header className='flex justify-between items-center mx-10 my-16'>
-				<img src={Logo} alt='AR23 Weather App' className='w-[175px]' />
+			<header className='flex justify-center items-center mx-10 my-[100px] relative'>
+				<img
+					src={`/src/assets/images/${data ? data.weather[0].main : null}.svg`}
+					alt='AR23 Weather App'
+					className='absolute left-0  h-[175px]'
+				/>
 				<SearchBar handleSearch={onSearchChange} />
 				<Box
 					sx={{
 						display: 'flex',
 						justifyContent: 'center',
 						alignItems: 'center',
+						position: 'absolute',
+						right: '0',
 					}}
 				>
 					<CurrentLocation userLocationBtn={userLocation} />
@@ -29,6 +34,7 @@ const Header = ({ onSearchChange, userLocation }) => {
 Header.propTypes = {
 	onSearchChange: PropTypes.any,
 	userLocation: PropTypes.any,
+	data: PropTypes.any,
 };
 
 export default Header;
