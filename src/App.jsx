@@ -1,5 +1,6 @@
 import {
 	FiveDayForecast,
+	Footer,
 	Forecast,
 	ForecastByTime,
 	ForecastHighlights,
@@ -108,6 +109,7 @@ const App = () => {
 				>
 					<Forecast data={currentWeather} />
 					<FiveDayForecast data={forecast} />
+					<Footer />
 				</Box>
 				<Box
 					sx={{
