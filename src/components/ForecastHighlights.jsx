@@ -52,7 +52,7 @@ const ForecastHighlights = ({ data, airPollutionData }) => {
 						<CustomWeatherCard
 							title={t('visibility')}
 							cardIcon={VisibilityOutlinedIcon}
-							Data={data ? Math.round(data.visibility / 1000) : null}
+							Data={data ? Math.round(data.visibility / 1000 + 1) : null}
 							meaning={' km'}
 						/>
 					</div>
