@@ -20,6 +20,7 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
                 feelsLike: 'Feels Like',
                 fiveDayForecastHeading: '5 Day Forecast',
                 forecastByTimeHeading: 'Today at',
+                author: 'Created by AR23'
             },
         },
         ru: {
@@ -36,6 +37,7 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
                 feelsLike: 'Ощущается как',
                 fiveDayForecastHeading: 'Прогноз на 5 дней',
                 forecastByTimeHeading: 'Сегодня в',
+                author: 'Разработано AR23'
             },
         }
     }
