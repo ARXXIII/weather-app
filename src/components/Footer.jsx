@@ -6,30 +6,26 @@ const Footer = () => {
 
 	return (
 		<footer>
-			<Box
-				sx={{
-					margin: '40px 0',
-					padding: '23px',
-					textAlign: 'center',
-					color: '#FFFFFF',
-					borderRadius: '12px',
-					backgroundColor: '#1D1B1F',
-				}}
-			>
-				<Typography
+			<a href='https://github.com/PICKLEGENT' rel='noreferrer' target='_blank'>
+				<Box
 					sx={{
-						letterSpacing: '0.05em',
+						margin: '40px 0',
+						padding: '23px',
+						textAlign: 'center',
+						color: '#FFFFFF',
+						borderRadius: '12px',
+						backgroundColor: '#1D1B1F',
 					}}
 				>
-					<a
-						href='https://github.com/PICKLEGENT'
-						rel='noreferrer'
-						target='_blank'
+					<Typography
+						sx={{
+							letterSpacing: '0.05em',
+						}}
 					>
 						{t('author')}
-					</a>
-				</Typography>
-			</Box>
+					</Typography>
+				</Box>
+			</a>
 		</footer>
 	);
 };
