@@ -1,7 +1,7 @@
 ![image](https://github.com/PICKLEGENT/Weather-App-2.0/assets/77008804/69ab3531-5697-4915-96da-636d2b2438bf)# React + Vite
 
 UI Elements
-![image](https://github.com/PICKLEGENT/Weather-App-2.0/assets/77008804/7a9e6ce6-e4a7-40f3-8cd5-91373e5787ea)
+![UI](https://github.com/PICKLEGENT/Weather-App-2.0/assets/77008804/f520d431-84a9-4807-bdba-ce622ae1de0b)
 
 Uses in project:
 React JS + Tailwind + MUI + OpenWeatherMap API + GeoDB Cities + i18next
