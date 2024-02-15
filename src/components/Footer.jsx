@@ -10,7 +10,7 @@ const Footer = () => {
 				<Box
 					sx={{
 						margin: '40px 0',
-						padding: '23px',
+						padding: '20px',
 						textAlign: 'center',
 						color: '#FFFFFF',
 						borderRadius: '12px',
@@ -19,6 +19,7 @@ const Footer = () => {
 				>
 					<Typography
 						sx={{
+							fontSize: '20px',
 							letterSpacing: '0.05em',
 						}}
 					>

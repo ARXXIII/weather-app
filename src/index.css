@@ -29,6 +29,7 @@ body {
 .lang-changer__btn.selected {
 	color: #000;
 	background-color: #b6a0e6;
+	border: 1px solid #b6a0e6;
 }
 
 .lang-changer__btn {
