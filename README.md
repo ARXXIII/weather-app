@@ -1,8 +1,7 @@
-# React + Vite
+![image](https://github.com/PICKLEGENT/Weather-App-2.0/assets/77008804/69ab3531-5697-4915-96da-636d2b2438bf)# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+UI Elements
+![image](https://github.com/PICKLEGENT/Weather-App-2.0/assets/77008804/7a9e6ce6-e4a7-40f3-8cd5-91373e5787ea)
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Uses in project:
+React JS + Tailwind + MUI + OpenWeatherMap API + GeoDB Cities + i18next
