@@ -9,7 +9,7 @@ const CurrentLocation = ({ userLocationBtn }) => {
 	return (
 		<>
 			<button
-				className='flex items-center rounded-full bg-[#B6A0E6] font-semibold mx-10 px-4 py-2'
+				className='flex items-center rounded-full bg-[#B6A0E6] font-semibold mx-10 px-4 py-2 border border-[#B6A0E6]'
 				onClick={userLocationBtn}
 			>
 				<SvgIcon
