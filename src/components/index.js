@@ -9,6 +9,8 @@ import CustomWeatherCard from "./CustomWeatherCard";
 import AirQualityCard from "./AirQualityCard";
 import SunriseSunset from "./SunriseSunset";
 import LanguageSelector from "./LanguageSelector";
+import SearchResults from "./SearchResults";
+import SearchResult from "./SearchResult";
 import Footer from "./Footer";
 
 export {
@@ -23,5 +25,7 @@ export {
     AirQualityCard,
     SunriseSunset,
     LanguageSelector,
+    SearchResults,
+    SearchResult,
     Footer
 }

@@ -20,7 +20,8 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
                 feelsLike: 'Feels Like',
                 fiveDayForecastHeading: '5 Day Forecast',
                 forecastByTimeHeading: 'Today at',
-                author: 'Created by AR23'
+                author: 'Created by AR23',
+                SearchBarPlaceholder: 'Moscow, RU'
             },
         },
         ru: {
@@ -37,7 +38,8 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
                 feelsLike: 'Ощущается как',
                 fiveDayForecastHeading: 'Прогноз на 5 дней',
                 forecastByTimeHeading: 'Сегодня в',
-                author: 'Разработано AR23'
+                author: 'Разработано AR23',
+                SearchBarPlaceholder: 'Москва, РФ'
             },
         }
     }

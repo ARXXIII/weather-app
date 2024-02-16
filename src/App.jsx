@@ -11,6 +11,8 @@ import { useEffect, useState } from 'react';
 import { Box } from '@mui/material';
 
 const App = () => {
+	const [results, setResults] = useState([]);
+	const [latLon, setLatLon] = useState([]);
 	const [currentWeather, setCurrentWeather] = useState(null);
 	const [forecast, setForecast] = useState(null);
 	const [airPollution, setAirPollution] = useState(null);
@@ -63,7 +65,7 @@ const App = () => {
 	}, []);
 
 	const handleOnSearch = (searchData) => {
-		const [lat, lon] = searchData.value.split(' ');
+		const [lat, lon] = latLon.value.split(' ');
 
 		const currWeatherFetch = fetch(
 			`${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&units=metric&appid=${WEATHER_API_KEY}`
@@ -94,6 +96,9 @@ const App = () => {
 				onSearchChange={handleOnSearch}
 				userLocation={userLocation}
 				data={currentWeather}
+				results={results}
+				setResults={setResults}
+				setLatLon={setLatLon}
 			/>
 			<Box
 				sx={{
