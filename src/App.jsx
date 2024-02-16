@@ -12,7 +12,6 @@ import { Box } from '@mui/material';
 
 const App = () => {
 	const [results, setResults] = useState([]);
-	const [latLon, setLatLon] = useState([]);
 	const [currentWeather, setCurrentWeather] = useState(null);
 	const [forecast, setForecast] = useState(null);
 	const [airPollution, setAirPollution] = useState(null);
@@ -64,8 +63,8 @@ const App = () => {
 		userLocation();
 	}, []);
 
-	const handleOnSearch = (searchData) => {
-		const [lat, lon] = latLon.value.split(' ');
+	const handleOnSearch = (result) => {
+		const [lat, lon] = result.value.split(' ');
 
 		const currWeatherFetch = fetch(
 			`${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&units=metric&appid=${WEATHER_API_KEY}`
@@ -83,11 +82,12 @@ const App = () => {
 				const forecastResponse = await response[1].json();
 				const airPollutionResponse = await response[2].json();
 
-				setCurrentWeather({ city: searchData.label, ...weatherResponse });
-				setForecast({ city: searchData.label, ...forecastResponse });
-				setAirPollution({ city: searchData.label, ...airPollutionResponse });
+				setCurrentWeather({ city: result.label, ...weatherResponse });
+				setForecast({ city: result.label, ...forecastResponse });
+				setAirPollution({ city: result.label, ...airPollutionResponse });
 			})
 			.catch(console.log);
+		setResults([]);
 	};
 
 	return (
@@ -98,7 +98,6 @@ const App = () => {
 				data={currentWeather}
 				results={results}
 				setResults={setResults}
-				setLatLon={setLatLon}
 			/>
 			<Box
 				sx={{

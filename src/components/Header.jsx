@@ -11,7 +11,6 @@ const Header = ({
 	data,
 	results,
 	setResults,
-	setLatLon,
 }) => {
 	return (
 		<>
@@ -22,13 +21,9 @@ const Header = ({
 					className='absolute left-0  h-[175px]'
 				/>
 				<Box>
-					<SearchBar handleSearch={onSearchChange} setResults={setResults} />
+					<SearchBar setResults={setResults} />
 					{results && results.length > 0 && (
-						<SearchResults
-							results={results}
-							onSearchChange={onSearchChange}
-							setLatLon={setLatLon}
-						/>
+						<SearchResults results={results} handleSearch={onSearchChange} />
 					)}
 				</Box>
 				<Box

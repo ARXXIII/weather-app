@@ -2,13 +2,13 @@ import { Box } from '@mui/material';
 import { PropTypes } from 'prop-types';
 import SearchResult from './SearchResult';
 
-const SearchResults = ({ results, onSearchChange }) => {
+const SearchResults = ({ results, handleSearch }) => {
 	return (
 		<>
 			<section className='absolute mt-5'>
 				<Box
 					sx={{
-						width: '400px',
+						width: '500px',
 						color: 'white',
 						border: '1px solid #b6a0e6',
 						borderRadius: '12px',
@@ -20,7 +20,7 @@ const SearchResults = ({ results, onSearchChange }) => {
 						return (
 							<SearchResult
 								result={result}
-								onSearchChange={onSearchChange}
+								handleSearch={handleSearch}
 								key={id}
 							/>
 						);
@@ -33,7 +33,7 @@ const SearchResults = ({ results, onSearchChange }) => {
 
 SearchResults.propTypes = {
 	results: PropTypes.any,
-	onSearchChange: PropTypes.any,
+	handleSearch: PropTypes.any,
 };
 
 export default SearchResults;

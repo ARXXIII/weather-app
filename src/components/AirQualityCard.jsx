@@ -95,7 +95,7 @@ const AirQualityCard = ({ airQualityData }) => {
 							color: '#6C6B71',
 						}}
 					>
-						SO<sub>2</sub>
+						SO<sub className='z-0'>2</sub>
 					</Typography>
 					<Typography
 						sx={{
@@ -117,7 +117,7 @@ const AirQualityCard = ({ airQualityData }) => {
 							color: '#6C6B71',
 						}}
 					>
-						NO<sub>2</sub>
+						NO<sub className='z-0'>2</sub>
 					</Typography>
 					<Typography
 						sx={{
@@ -139,7 +139,7 @@ const AirQualityCard = ({ airQualityData }) => {
 							color: '#6C6B71',
 						}}
 					>
-						O<sub>3</sub>
+						O<sub className='z-0'>3</sub>
 					</Typography>
 					<Typography
 						sx={{
