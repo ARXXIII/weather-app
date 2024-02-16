@@ -10,7 +10,7 @@ const SearchResult = ({ result, handleSearch }) => {
 	return (
 		<>
 			<div
-				className='flex justify-start items-center p-2.5 hover:bg-[#b6a0e6] hover:text-[#1D1B1F] duration-300 ease-in-out cursor-pointer z-10'
+				className='flex justify-start items-center p-2.5 hover:bg-[#b6a0e6] hover:text-[#1D1B1F] duration-300 ease-in-out cursor-pointer'
 				onClick={() => selectCity(result)}
 			>
 				<SvgIcon

@@ -5,7 +5,7 @@ import SearchResult from './SearchResult';
 const SearchResults = ({ results, handleSearch }) => {
 	return (
 		<>
-			<section className='absolute mt-5'>
+			<section className='absolute mt-5 z-10'>
 				<Box
 					sx={{
 						width: '500px',
