@@ -2,7 +2,7 @@
 
 This is a React app that uses the [OpenWeatherMap](https://openweathermap.org/api) API to display the current weather in a city
 
-### Screenshot
+### Screenshots
 <img src='weatherApp_1.png' alt='screenshot' width='1000'>
 
 <img src='weatherApp_2.png' alt='screenshot' width='1000'>
