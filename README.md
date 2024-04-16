@@ -1,6 +1,6 @@
 # Weather API React App - Javascript + Vite + Tailwind CSS + i18next
 
-This is a React app that uses the [OpenWeatherMap](https://openweathermap.org/api) API to display the current weather in a city
+This is a React app that uses the [OpenWeatherMap](https://openweathermap.org/api) API to display the current weather in a city.
 
 ### Screenshots
 
@@ -42,6 +42,10 @@ npm run dev
 
 ## Resources
 
+- [ipinfo.io](https://ipinfo.io/)
 - [OpenWeatherMap](https://openweathermap.org/api)
 - [GeoDB Cities](http://geodb-cities-api.wirefreethought.com/)
-- [ipinfo.io](https://ipinfo.io/)
+
+### Live Demo
+
+[Click](https://ar23-weather-app.vercel.app)
