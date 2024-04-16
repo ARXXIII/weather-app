@@ -58,8 +58,8 @@ const SunriseSunset = ({ sunriseSunsetData }) => {
 };
 
 SunriseSunset.propTypes = {
-	sunriseSunsetData: PropTypes.object,
 	getTime: PropTypes.any,
+	sunriseSunsetData: PropTypes.object,
 };
 
 export default SunriseSunset;

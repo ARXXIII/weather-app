@@ -1,5 +1,5 @@
-import { Box, SvgIcon } from '@mui/material';
 import PropTypes from 'prop-types';
+import { Box, SvgIcon } from '@mui/material';
 
 const CustomWeatherCard = ({ title, cardIcon, Data, meaning }) => {
 	return (
@@ -23,10 +23,10 @@ const CustomWeatherCard = ({ title, cardIcon, Data, meaning }) => {
 };
 
 CustomWeatherCard.propTypes = {
-	title: PropTypes.string,
-	cardIcon: PropTypes.object,
 	Data: PropTypes.any,
+	title: PropTypes.string,
 	meaning: PropTypes.string,
+	cardIcon: PropTypes.object,
 };
 
 export default CustomWeatherCard;

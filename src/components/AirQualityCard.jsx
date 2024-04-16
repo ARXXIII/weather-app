@@ -1,8 +1,8 @@
-import { Box, SvgIcon } from '@mui/material';
-import AirOutlinedIcon from '@mui/icons-material/AirOutlined';
 import { PropTypes } from 'prop-types';
 import { aqiText } from '../constants';
+import { Box, SvgIcon } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+import AirOutlinedIcon from '@mui/icons-material/AirOutlined';
 
 const AirQualityCard = ({ airQualityData }) => {
 	const { t } = useTranslation();
@@ -69,8 +69,8 @@ const AirQualityCard = ({ airQualityData }) => {
 };
 
 AirQualityCard.propTypes = {
-	airQualityData: PropTypes.object,
 	aqiText: PropTypes.any,
+	airQualityData: PropTypes.object,
 };
 
 export default AirQualityCard;

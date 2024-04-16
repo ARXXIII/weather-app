@@ -83,8 +83,8 @@ const ForecastByTime = ({ data, timezoneData }) => {
 
 ForecastByTime.propTypes = {
 	data: PropTypes.object,
-	timezoneData: PropTypes.number,
 	getHours: PropTypes.any,
+	timezoneData: PropTypes.number,
 };
 
 export default ForecastByTime;
