@@ -17,7 +17,7 @@ const App = () => {
 	const [airPollution, setAirPollution] = useState(null);
 
 	const userLocation = async () => {
-		const IP_API = YOUR_IP_API_KEY;
+		const IP_API = 'https://ipinfo.io/json?token=6c2f9d137c75be';
 
 		let userLocationResponse = await fetch(IP_API);
 		let userLocationData = await userLocationResponse.json();
