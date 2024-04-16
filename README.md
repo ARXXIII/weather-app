@@ -8,6 +8,8 @@ This is a React app that uses the [OpenWeatherMap](https://openweathermap.org/ap
 
 <img src='weatherApp_2.png' alt='screenshot' width='1000'>
 
+<img src='weatherApp_3.png' alt='screenshot' width='1000'>
+
 ## Getting Started
 
 - Clone repository and `cd` into it
