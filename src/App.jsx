@@ -1,3 +1,6 @@
+import { Box } from '@mui/material';
+import { useEffect, useState } from 'react';
+import { WEATHER_API_KEY, WEATHER_API_URL } from './Api';
 import {
 	FiveDayForecast,
 	Footer,
@@ -6,9 +9,6 @@ import {
 	ForecastHighlights,
 	Header,
 } from './components';
-import { WEATHER_API_KEY, WEATHER_API_URL } from './Api';
-import { useEffect, useState } from 'react';
-import { Box } from '@mui/material';
 
 const App = () => {
 	const [results, setResults] = useState([]);
@@ -92,42 +92,39 @@ const App = () => {
 
 	return (
 		<>
-			<Header
-				onSearchChange={handleOnSearch}
-				userLocation={userLocation}
-				data={currentWeather}
-				results={results}
-				setResults={setResults}
-			/>
-			<Box
-				sx={{
-					display: 'flex',
-					justifyContent: 'space-around',
-					alignItems: 'start',
-				}}
-			>
-				<Box
-					sx={{
-						width: '22.5%',
-					}}
-				>
-					<Forecast data={currentWeather} />
-					<FiveDayForecast data={forecast} />
-					<Footer />
-				</Box>
-				<Box
-					sx={{
-						width: '70%',
-					}}
-				>
-					<ForecastHighlights
-						data={currentWeather}
-						airPollutionData={airPollution}
-					/>
-					<ForecastByTime
-						data={forecast}
-						timezoneData={currentWeather ? currentWeather.timezone : null}
-					/>
+			<Box className='flex flex-col justify-center px-16 py-8 gap-y-8'>
+				<Header
+					onSearchChange={handleOnSearch}
+					userLocation={userLocation}
+					data={currentWeather}
+					results={results}
+					setResults={setResults}
+				/>
+				<Box className='flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-start gap-y-8 lg:gap-x-8'>
+					<Box className='flex flex-col gap-y-8'>
+						<Forecast data={currentWeather} />
+						<Box>
+							<FiveDayForecast data={forecast} />
+						</Box>
+						<Box className='hidden lg:block'>
+							<Footer />
+						</Box>
+					</Box>
+					<Box className='flex flex-col gap-y-8'>
+						<ForecastHighlights
+							data={currentWeather}
+							airPollutionData={airPollution}
+						/>
+						<Box>
+							<ForecastByTime
+								data={forecast}
+								timezoneData={currentWeather ? currentWeather.timezone : null}
+							/>
+						</Box>
+					</Box>
+					<Box className='block lg:hidden'>
+						<Footer />
+					</Box>
 				</Box>
 			</Box>
 		</>

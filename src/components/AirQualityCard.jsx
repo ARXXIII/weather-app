@@ -1,4 +1,4 @@
-import { Box, SvgIcon, Typography } from '@mui/material';
+import { Box, SvgIcon } from '@mui/material';
 import AirOutlinedIcon from '@mui/icons-material/AirOutlined';
 import { PropTypes } from 'prop-types';
 import { aqiText } from '../constants';
@@ -8,35 +8,13 @@ const AirQualityCard = ({ airQualityData }) => {
 	const { t } = useTranslation();
 
 	return (
-		<Box
-			component='section'
-			sx={{
-				padding: '10px 15px',
-				borderRadius: '12px',
-				backgroundColor: '#1A191D',
-			}}
-		>
-			<Box
-				sx={{
-					display: 'flex',
-					justifyContent: 'space-between',
-					alignItems: 'center',
-				}}
-			>
-				<Typography sx={{ color: '#6C6B71' }}>
-					{t('airQualityIndex')}
-				</Typography>
-				<Typography
-					className={`air-quality-type__badge air-quality-type__${
+		<Box className='p-4 bg-dark-black-blue rounded-xl' component='section'>
+			<Box className='flex justify-between items-center'>
+				<h2 className='text-lg text-zinc-500'>{t('airQualityIndex')}</h2>
+				<p
+					className={`px-3 font-semibold text-sm text-black rounded-full cursor-help air-quality-type__badge air-quality-type__${
 						airQualityData ? airQualityData.list[0].main.aqi : null
 					}`}
-					sx={{
-						padding: '0 12px',
-						fontSize: '14px',
-						color: '#000',
-						borderRadius: '25px',
-						cursor: 'help',
-					}}
 					title={
 						airQualityData
 							? aqiText[airQualityData.list[0].main.aqi].message
@@ -46,109 +24,44 @@ const AirQualityCard = ({ airQualityData }) => {
 					{airQualityData
 						? aqiText[airQualityData.list[0].main.aqi].level
 						: null}
-				</Typography>
+				</p>
 			</Box>
-			<Box
-				sx={{
-					display: 'flex',
-					justifyContent: 'space-around',
-					alignItems: 'center',
-					margin: '20px 0',
-				}}
-			>
+			<Box className='flex flex-col lg:flex-row justify-around items-center gap-y-8 lg:gap-x-8 mt-4'>
 				<SvgIcon
 					component={AirOutlinedIcon}
 					sx={{
 						fontSize: 'h3.fontSize',
 					}}
 				/>
-				<Box
-					sx={{
-						textAlign: 'center',
-					}}
-				>
-					<Typography
-						sx={{
-							fontSize: '14px',
-							color: '#6C6B71',
-						}}
-					>
-						PM2.5
-					</Typography>
-					<Typography
-						sx={{
-							marginTop: '5px',
-							fontSize: 'h4.fontSize',
-						}}
-					>
+				<Box className='text-center'>
+					<p className='text-sm text-zinc-500'>PM2.5</p>
+					<p className='mt-2 text-4xl'>
 						{airQualityData ? airQualityData.list[0].components.pm2_5 : null}
-					</Typography>
+					</p>
 				</Box>
-				<Box
-					sx={{
-						textAlign: 'center',
-					}}
-				>
-					<Typography
-						sx={{
-							fontSize: '14px',
-							color: '#6C6B71',
-						}}
-					>
+				<Box className='text-center'>
+					<p className='text-sm text-zinc-500'>
 						SO<sub className='z-0'>2</sub>
-					</Typography>
-					<Typography
-						sx={{
-							marginTop: '5px',
-							fontSize: 'h4.fontSize',
-						}}
-					>
+					</p>
+					<p className='mt-2 text-4xl'>
 						{airQualityData ? airQualityData.list[0].components.so2 : null}
-					</Typography>
+					</p>
 				</Box>
-				<Box
-					sx={{
-						textAlign: 'center',
-					}}
-				>
-					<Typography
-						sx={{
-							fontSize: '14px',
-							color: '#6C6B71',
-						}}
-					>
+				<Box className='text-center'>
+					<p className='text-sm text-zinc-500'>
 						NO<sub className='z-0'>2</sub>
-					</Typography>
-					<Typography
-						sx={{
-							marginTop: '5px',
-							fontSize: 'h4.fontSize',
-						}}
-					>
+					</p>
+					<p className='mt-2 text-4xl'>
 						{airQualityData ? airQualityData.list[0].components.no2 : null}
-					</Typography>
+					</p>
 				</Box>
-				<Box
-					sx={{
-						textAlign: 'center',
-					}}
-				>
-					<Typography
-						sx={{
-							fontSize: '14px',
-							color: '#6C6B71',
-						}}
-					>
+				<Box className='text-center'>
+					<p className='text-sm text-zinc-500'>
 						O<sub className='z-0'>3</sub>
-					</Typography>
-					<Typography
-						sx={{
-							marginTop: '5px',
-							fontSize: 'h4.fontSize',
-						}}
-					>
+					</p>
+					<p className='mt-2 text-4xl'>
 						{airQualityData ? airQualityData.list[0].components.o3 : null}
-					</Typography>
+					</p>
 				</Box>
 			</Box>
 		</Box>

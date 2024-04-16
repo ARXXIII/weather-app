@@ -1,41 +1,21 @@
-import { Box, SvgIcon, Typography } from '@mui/material';
+import { Box, SvgIcon } from '@mui/material';
 import PropTypes from 'prop-types';
 
 const CustomWeatherCard = ({ title, cardIcon, Data, meaning }) => {
 	return (
 		<>
-			<Box
-				sx={{
-					padding: '10px 15px',
-					borderRadius: '12px',
-					backgroundColor: '#1A191D',
-				}}
-			>
-				<Typography sx={{ color: '#6C6B71' }}>{title}</Typography>
-				<Box
-					sx={{
-						display: 'flex',
-						justifyContent: 'space-around',
-						alignItems: 'center',
-						margin: '15px 0',
-					}}
-				>
+			<Box className='p-4 bg-dark-black-blue rounded-xl'>
+				<h3 className='text-lg text-zinc-500'>{title}</h3>
+				<Box className='flex justify-around items-center m-4'>
 					<SvgIcon
 						component={cardIcon}
-						sx={{ fontSize: '50px' }}
+						sx={{ fontSize: '48px' }}
 						inheritViewBox
 					/>
-					<Typography
-						sx={{
-							display: 'flex',
-							justifyContent: 'center',
-							alignItems: 'end',
-							fontSize: '40px',
-						}}
-					>
+					<p className='flex justify-center items-end text-4xl'>
 						{Data ? Data : null}
 						{meaning}
-					</Typography>
+					</p>
 				</Box>
 			</Box>
 		</>

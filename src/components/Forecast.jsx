@@ -1,36 +1,21 @@
-import { Box, SvgIcon, Typography } from '@mui/material';
-import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined';
-import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import { PropTypes } from 'prop-types';
 import { getDate } from '../constants';
+import { Box, SvgIcon } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
+import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined';
 
 const Forecast = ({ data }) => {
 	const { t } = useTranslation();
 
 	return (
 		<>
-			<Box
-				sx={{
-					padding: '20px 25px',
-					color: '#FFFFFF',
-					borderRadius: '12px',
-					backgroundColor: '#1D1B1F',
-				}}
-			>
-				<Typography sx={{ fontSize: 'h6.fontSize', letterSpacing: '0.05em' }}>
-					{t('currWeatherHeading')}
-				</Typography>
-				<section className='flex justify-around  items-center'>
-					<Typography
-						sx={{
-							margin: '15px 0',
-							fontSize: '80px',
-							letterSpacing: '0.05em',
-						}}
-					>
+			<Box className='p-8 text-neutral-100 bg-black-blue rounded-xl'>
+				<h1 className='text-2xl tracking-wide'>{t('currWeatherHeading')}</h1>
+				<Box className='flex justify-center items-center mx-4 gap-x-8'>
+					<h2 className='text-7xl'>
 						{data ? Math.round(data.main.temp) : null}&deg;C
-					</Typography>
+					</h2>
 					<img
 						src={
 							data
@@ -39,36 +24,29 @@ const Forecast = ({ data }) => {
 						}
 						alt={data ? data.weather[0].description : null}
 					/>
-				</section>
-				<Typography
-					sx={{
-						paddingBottom: '15px',
-						letterSpacing: '0.05em',
-						textTransform: 'capitalize',
-						borderBottom: '2px solid #29282B',
-					}}
-				>
-					{data ? data.weather[0].main : null}
-				</Typography>
-				<Box sx={{ display: 'flex', margin: '15px 0' }}>
-					<SvgIcon
-						component={CalendarTodayOutlinedIcon}
-						sx={{ marginRight: '5px', fontSize: '22px' }}
-						inheritViewBox
-					/>
-					<Typography sx={{ letterSpacing: '0.05em', color: '#6C6B71' }}>
-						{data ? getDate(data.dt, data.timezone) : null}
-					</Typography>
 				</Box>
-				<Box sx={{ display: 'flex', alignItems: 'center' }}>
-					<SvgIcon
-						component={PlaceOutlinedIcon}
-						sx={{ marginRight: '5px', fontSize: '22px' }}
-						inheritViewBox
-					/>
-					<Typography sx={{ letterSpacing: '0.05em', color: '#6C6B71' }}>
-						{data ? data.city : null}
-					</Typography>
+				<p className='text-xl capitalize'>
+					{data ? data.weather[0].main : null}
+				</p>
+				<Box className='mt-4 pt-4 border-t border-zinc-500'>
+					<Box className='flex items-center gap-x-2'>
+						<SvgIcon
+							component={CalendarTodayOutlinedIcon}
+							sx={{ fontSize: '22px' }}
+							inheritViewBox
+						/>
+						<p className='text-lg text-zinc-500'>
+							{data ? getDate(data.dt, data.timezone) : null}
+						</p>
+					</Box>
+					<Box className='flex items-center mt-4 gap-x-2'>
+						<SvgIcon
+							component={PlaceOutlinedIcon}
+							sx={{ fontSize: '22px' }}
+							inheritViewBox
+						/>
+						<p className='text-lg text-zinc-500'>{data ? data.city : null}</p>
+					</Box>
 				</Box>
 			</Box>
 		</>

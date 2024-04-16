@@ -5,26 +5,15 @@ import SearchResult from './SearchResult';
 const SearchResults = ({ results, handleSearch }) => {
 	return (
 		<>
-			<section className='absolute mt-5 z-10'>
-				<Box
-					sx={{
-						width: '500px',
-						color: 'white',
-						border: '1px solid #b6a0e6',
-						borderRadius: '12px',
-						backgroundColor: '#1D1B1F',
-						overflow: 'hidden',
-					}}
-				>
-					{results.map((result, id) => {
-						return (
-							<SearchResult
-								result={result}
-								handleSearch={handleSearch}
-								key={id}
-							/>
-						);
-					})}
+			<section className='absolute mt-4 z-10'>
+				<Box className='w-[300px] lg:w-[500px] text-neutral-100 border border-violet-400 bg-black-blue rounded-xl overflow-hidden'>
+					{results.map((result, id) => (
+						<SearchResult
+							result={result}
+							handleSearch={handleSearch}
+							key={id}
+						/>
+					))}
 				</Box>
 			</section>
 		</>

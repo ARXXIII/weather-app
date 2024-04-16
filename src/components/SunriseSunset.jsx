@@ -1,4 +1,4 @@
-import { Box, SvgIcon, Typography } from '@mui/material';
+import { Box, SvgIcon } from '@mui/material';
 import WbSunnyOutlinedIcon from '@mui/icons-material/WbSunnyOutlined';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import { PropTypes } from 'prop-types';
@@ -9,73 +9,48 @@ const SunriseSunset = ({ sunriseSunsetData }) => {
 	const { t } = useTranslation();
 
 	return (
-		<Box
-			component='section'
-			sx={{
-				padding: '10px 15px',
-				height: '161px',
-				borderRadius: '12px',
-				backgroundColor: '#1A191D',
-			}}
-		>
-			<Typography sx={{ color: '#6C6B71' }}>
-				{t('sunrise')} & {t('sunset')}
-			</Typography>
-			<Box
-				sx={{
-					display: 'flex',
-					justifyContent: 'space-around',
-					alignItems: 'center',
-					margin: '20px 0',
-				}}
-			>
-				<SvgIcon
-					component={WbSunnyOutlinedIcon}
-					sx={{
-						marginRight: '15px',
-						fontSize: 'h3.fontSize',
-					}}
-				/>
-				<Box>
-					<Typography sx={{ fontSize: '14px', color: '#6C6B71' }}>
-						{t('sunrise')}
-					</Typography>
-					<Typography
+		<Box className='p-4 bg-dark-black-blue rounded-xl' component='section'>
+			<h2 className='text-lg text-zinc-500'>
+				{t('sunrise')}&nbsp;&&nbsp;{t('sunset')}
+			</h2>
+			<Box className='flex flex-col lg:flex-row justify-around items-center gap-y-8 lg:gap-x-8 mt-4'>
+				<Box className='flex items-center gap-x-8'>
+					<SvgIcon
+						component={WbSunnyOutlinedIcon}
 						sx={{
-							fontSize: '34px',
+							fontSize: 'h3.fontSize',
 						}}
-					>
-						{sunriseSunsetData
-							? getTime(
-									sunriseSunsetData.sys.sunrise,
-									sunriseSunsetData.timezone
-							  )
-							: null}
-					</Typography>
+					/>
+					<Box>
+						<p className='text-sm text-zinc-500'>{t('sunrise')}</p>
+						<p className='mt-2 text-4xl'>
+							{sunriseSunsetData
+								? getTime(
+										sunriseSunsetData.sys.sunrise,
+										sunriseSunsetData.timezone
+								  )
+								: null}
+						</p>
+					</Box>
 				</Box>
-				<SvgIcon
-					component={DarkModeOutlinedIcon}
-					sx={{
-						marginRight: '15px',
-						fontSize: 'h3.fontSize',
-					}}
-				/>
-				<Box>
-					<Typography sx={{ fontSize: '14px', color: '#6C6B71' }}>
-						{t('sunset')}
-					</Typography>
-					<Typography
+				<Box className='flex items-center gap-x-8'>
+					<SvgIcon
+						component={DarkModeOutlinedIcon}
 						sx={{
-							fontSize: '34px',
+							fontSize: 'h3.fontSize',
 						}}
-					>
-						{sunriseSunsetData
-							? getTime(
-									sunriseSunsetData.sys.sunset,
-									sunriseSunsetData.timezone
-							  )
-							: null}
-					</Typography>
+					/>
+					<Box>
+						<p className='text-sm text-zinc-500'>{t('sunset')}</p>
+						<p className='mt-2 text-4xl'>
+							{sunriseSunsetData
+								? getTime(
+										sunriseSunsetData.sys.sunset,
+										sunriseSunsetData.timezone
+								  )
+								: null}
+						</p>
+					</Box>
 				</Box>
 			</Box>
 		</Box>

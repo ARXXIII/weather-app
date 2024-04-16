@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
@@ -7,24 +7,8 @@ const Footer = () => {
 	return (
 		<footer>
 			<a href='https://github.com/PICKLEGENT' rel='noreferrer' target='_blank'>
-				<Box
-					sx={{
-						margin: '40px 0',
-						padding: '20px',
-						textAlign: 'center',
-						color: '#FFFFFF',
-						borderRadius: '12px',
-						backgroundColor: '#1D1B1F',
-					}}
-				>
-					<Typography
-						sx={{
-							fontSize: '20px',
-							letterSpacing: '0.05em',
-						}}
-					>
-						{t('author')}
-					</Typography>
+				<Box className='p-8 text-center text-2xl text-neutral-100 tracking-wide bg-black-blue rounded-xl'>
+					<p>{t('author')}</p>
 				</Box>
 			</a>
 		</footer>

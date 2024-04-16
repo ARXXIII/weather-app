@@ -41,7 +41,7 @@ const SearchBar = ({ setResults }) => {
 				placeholder={t('SearchBarPlaceholder')}
 				value={search}
 				onChange={(e) => handleOnChange(e.target.value)}
-				className='px-5 py-2 w-[500px] text-white border border-[#b6a0e6] bg-[#1D1B1F] capitalize rounded-full outline-none'
+				className='px-5 py-2 w-[300px] lg:w-[500px] text-white border border-violet-400 bg-black-blue capitalize rounded-full outline-none'
 			/>
 		</>
 	);

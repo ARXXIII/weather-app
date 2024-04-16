@@ -1,33 +1,38 @@
 import { useTranslation } from 'react-i18next';
 
 const LanguageSelector = () => {
-	const languages = [
-		{ code: 'en', lang: 'English' },
-		{ code: 'ru', lang: 'Русский' },
-	];
-
 	const { i18n } = useTranslation();
 
-	const changeLanguage = (lng) => {
-		i18n.changeLanguage(lng);
+	const lngCode = localStorage.getItem('i18nextLng');
+
+	const changeLanguage = () => {
+		i18n.changeLanguage(lngCode === 'ru' ? 'en' : 'ru');
 	};
 
 	return (
-		<div className='btn-container'>
-			{languages.map((lng) => {
-				return (
-					<button
-						className={`lang-changer__btn ${
-							lng.code === i18n.language ? 'selected' : ''
-						}  rounded-full font-semibold mx-2 px-4 py-2`}
-						key={lng.code}
-						onClick={() => changeLanguage(lng.code)}
+		<button className='hidden lg:flex' onClick={() => changeLanguage()}>
+			{lngCode === 'en' ? (
+				<div
+					className={`flex justify-start items-center w-[100px] bg-violet-400 rounded-full`}
+				>
+					<div
+						className={`flex justify-center items-center m-1 w-[40px] h-[40px] text-xs text-neutral-100 bg-black-blue rounded-full uppercase`}
 					>
-						{lng.lang}
-					</button>
-				);
-			})}
-		</div>
+						eng
+					</div>
+				</div>
+			) : (
+				<div
+					className={`flex justify-end items-center w-[100px] bg-violet-400 rounded-full`}
+				>
+					<div
+						className={`flex justify-center items-center m-1 w-[40px] h-[40px] text-xs text-neutral-100 bg-black-blue rounded-full uppercase`}
+					>
+						rus
+					</div>
+				</div>
+			)}
+		</button>
 	);
 };
 

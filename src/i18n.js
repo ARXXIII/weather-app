@@ -1,10 +1,22 @@
 import i18n from 'i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
+
+const systemLng = navigator.language;
+
+let lng;
+
+if (systemLng === 'ru-RU') {
+    lng = 'ru';
+    localStorage.setItem('i18nextLng', 'ru');
+} else {
+    lng = 'en';
+    localStorage.setItem('i18nextLng', 'en');
+}
 
 i18n.use(LanguageDetector).use(initReactI18next).init({
     debug: false,
-    lng:'en',
+    lng: lng,
     resources: {
         en: {
             translation: {
@@ -20,7 +32,7 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
                 feelsLike: 'Feels Like',
                 fiveDayForecastHeading: '5 Day Forecast',
                 forecastByTimeHeading: 'Today at',
-                author: 'Created by AR23',
+                author: 'Code by AR23',
                 SearchBarPlaceholder: 'Moscow, RU'
             },
         },
