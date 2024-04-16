@@ -6,8 +6,6 @@ const systemLng = navigator.language;
 
 let lng;
 
-console.log(systemLng)
-
 if (systemLng === 'ru-RU') {
     lng = 'ru';
     localStorage.setItem('i18nextLng', 'ru');

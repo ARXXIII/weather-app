@@ -5,8 +5,6 @@ import SearchResults from './SearchResults';
 import CurrentLocation from './CurrentLocation';
 import LanguageSelector from './LanguageSelector';
 
-console.log(window.innerWidth);
-
 const Header = ({
 	onSearchChange,
 	userLocation,
@@ -18,7 +16,7 @@ const Header = ({
 		<>
 			<header className='flex flex-col lg:flex-row justify-between gap-y-8 lg:gap-x-8 items-center relative'>
 				<img
-					src={`/src/assets/images/${data ? data.weather[0].main : null}.svg`}
+					src={`src/assets/images/${data ? data.weather[0].main : null}.svg`}
 					alt='AR23 Weather App'
 					className='hidden lg:block max-w-[175px] lg:max-w-[350px] max-h-[85px] lg:max-h-[175px]'
 				/>
