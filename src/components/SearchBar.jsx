@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { geoApiOptions, GEO_API_URL } from '../Api';
 import { PropTypes } from 'prop-types';
 import { useTranslation } from 'react-i18next';
+import { geoApiOptions, GEO_API_URL } from '../Api';
 
 const SearchBar = ({ setResults }) => {
 	const [search, setSearch] = useState('');
@@ -41,7 +41,7 @@ const SearchBar = ({ setResults }) => {
 				placeholder={t('SearchBarPlaceholder')}
 				value={search}
 				onChange={(e) => handleOnChange(e.target.value)}
-				className='px-5 py-2 w-[300px] lg:w-[500px] text-white border border-violet-400 bg-black-blue capitalize rounded-full outline-none'
+				className='px-5 py-2 w-full lg:w-[500px] text-white border border-violet-400 bg-black-blue capitalize rounded-full outline-none'
 			/>
 		</>
 	);

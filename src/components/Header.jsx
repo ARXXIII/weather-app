@@ -5,6 +5,8 @@ import SearchResults from './SearchResults';
 import CurrentLocation from './CurrentLocation';
 import LanguageSelector from './LanguageSelector';
 
+console.log(window.innerWidth);
+
 const Header = ({
 	onSearchChange,
 	userLocation,
@@ -20,16 +22,39 @@ const Header = ({
 					alt='AR23 Weather App'
 					className='hidden lg:block max-w-[175px] lg:max-w-[350px] max-h-[85px] lg:max-h-[175px]'
 				/>
-				<Box>
-					<SearchBar setResults={setResults} />
-					{results && results.length > 0 && (
-						<SearchResults results={results} handleSearch={onSearchChange} />
-					)}
-				</Box>
-				<Box className='flex flex-col lg:flex-row items-center gap-y-8 lg:gap-x-8'>
-					<CurrentLocation userLocationBtn={userLocation} />
-					<LanguageSelector />
-				</Box>
+				{window.innerWidth >= 1024 ? (
+					<>
+						<Box className='w-full lg:w-auto'>
+							<SearchBar setResults={setResults} />
+							{results && results.length > 0 && (
+								<SearchResults
+									results={results}
+									handleSearch={onSearchChange}
+								/>
+							)}
+						</Box>
+						<Box className='flex flex-col lg:flex-row items-end lg:items-center gap-y-8 lg:gap-x-8'>
+							<CurrentLocation userLocationBtn={userLocation} />
+							<LanguageSelector />
+						</Box>
+					</>
+				) : (
+					<Box className='flex flex-col-reverse lg:flex-row justify-between gap-y-8 lg:gap-x-8 w-full lg:w-auto'>
+						<Box className='w-full lg:w-auto'>
+							<SearchBar setResults={setResults} />
+							{results && results.length > 0 && (
+								<SearchResults
+									results={results}
+									handleSearch={onSearchChange}
+								/>
+							)}
+						</Box>
+						<Box className='flex flex-col lg:flex-row items-end lg:items-center gap-y-8 lg:gap-x-8'>
+							<CurrentLocation userLocationBtn={userLocation} />
+							<LanguageSelector />
+						</Box>
+					</Box>
+				)}
 			</header>
 		</>
 	);

@@ -1,9 +1,9 @@
-import { Box, SvgIcon } from '@mui/material';
-import WbSunnyOutlinedIcon from '@mui/icons-material/WbSunnyOutlined';
-import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import { PropTypes } from 'prop-types';
 import { getTime } from '../constants';
+import { Box, SvgIcon } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+import WbSunnyOutlinedIcon from '@mui/icons-material/WbSunnyOutlined';
+import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 
 const SunriseSunset = ({ sunriseSunsetData }) => {
 	const { t } = useTranslation();
@@ -23,7 +23,7 @@ const SunriseSunset = ({ sunriseSunsetData }) => {
 					/>
 					<Box>
 						<p className='text-sm text-zinc-500'>{t('sunrise')}</p>
-						<p className='mt-2 text-4xl'>
+						<p className='mt-3 text-4xl shrink-0'>
 							{sunriseSunsetData
 								? getTime(
 										sunriseSunsetData.sys.sunrise,
@@ -42,7 +42,7 @@ const SunriseSunset = ({ sunriseSunsetData }) => {
 					/>
 					<Box>
 						<p className='text-sm text-zinc-500'>{t('sunset')}</p>
-						<p className='mt-2 text-4xl'>
+						<p className='mt-3 text-4xl'>
 							{sunriseSunsetData
 								? getTime(
 										sunriseSunsetData.sys.sunset,

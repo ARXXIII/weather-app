@@ -1,5 +1,6 @@
 import { Box } from '@mui/material';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { WEATHER_API_KEY, WEATHER_API_URL } from './Api';
 import {
 	FiveDayForecast,
@@ -11,6 +12,8 @@ import {
 } from './components';
 
 const App = () => {
+	const { t } = useTranslation();
+
 	const [results, setResults] = useState([]);
 	const [currentWeather, setCurrentWeather] = useState(null);
 	const [forecast, setForecast] = useState(null);
@@ -21,6 +24,7 @@ const App = () => {
 
 		let userLocationResponse = await fetch(IP_API);
 		let userLocationData = await userLocationResponse.json();
+
 		const userLocationArr = userLocationData.loc.split(',');
 
 		const userCurrWeatherFetch = fetch(
@@ -87,12 +91,13 @@ const App = () => {
 				setAirPollution({ city: result.label, ...airPollutionResponse });
 			})
 			.catch(console.log);
+
 		setResults([]);
 	};
 
 	return (
 		<>
-			<Box className='flex flex-col justify-center px-16 py-8 gap-y-8'>
+			<Box className='flex flex-col justify-center px-4 lg:px-16 py-8 gap-y-8'>
 				<Header
 					onSearchChange={handleOnSearch}
 					userLocation={userLocation}
@@ -100,31 +105,37 @@ const App = () => {
 					results={results}
 					setResults={setResults}
 				/>
-				<Box className='flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-start gap-y-8 lg:gap-x-8'>
-					<Box className='flex flex-col gap-y-8'>
-						<Forecast data={currentWeather} />
-						<Box>
-							<FiveDayForecast data={forecast} />
+				{currentWeather ? (
+					<Box className='flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-start gap-y-8 lg:gap-x-8'>
+						<Box className='flex flex-col gap-y-8 w-full lg:w-auto'>
+							<Forecast data={currentWeather} />
+							<Box>
+								<FiveDayForecast data={forecast} />
+							</Box>
+							<Box className='hidden lg:block w-full lg:w-auto'>
+								<Footer />
+							</Box>
 						</Box>
-						<Box className='hidden lg:block'>
-							<Footer />
-						</Box>
-					</Box>
-					<Box className='flex flex-col gap-y-8'>
-						<ForecastHighlights
-							data={currentWeather}
-							airPollutionData={airPollution}
-						/>
-						<Box>
-							<ForecastByTime
-								data={forecast}
-								timezoneData={currentWeather ? currentWeather.timezone : null}
+						<Box className='flex flex-col gap-y-8 w-full lg:w-auto'>
+							<ForecastHighlights
+								data={currentWeather}
+								airPollutionData={airPollution}
 							/>
+							<Box>
+								<ForecastByTime
+									data={forecast}
+									timezoneData={currentWeather ? currentWeather.timezone : null}
+								/>
+							</Box>
 						</Box>
 					</Box>
-					<Box className='block lg:hidden'>
-						<Footer />
+				) : (
+					<Box className='p-8 text-center text-4xl text-neutral-100 tracking-wide bg-black-blue rounded-xl animate-bounce'>
+						<h1>{t('enterCity')}</h1>
 					</Box>
+				)}
+				<Box className='block lg:hidden w-full lg:w-auto'>
+					<Footer />
 				</Box>
 			</Box>
 		</>

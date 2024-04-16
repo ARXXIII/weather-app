@@ -5,8 +5,8 @@ import SearchResult from './SearchResult';
 const SearchResults = ({ results, handleSearch }) => {
 	return (
 		<>
-			<section className='absolute mt-4 z-10'>
-				<Box className='w-[300px] lg:w-[500px] text-neutral-100 border border-violet-400 bg-black-blue rounded-xl overflow-hidden'>
+			<section className='absolute mt-4 w-full z-10'>
+				<Box className='w-full lg:w-[500px] text-neutral-100 border border-violet-400 bg-black-blue rounded-xl overflow-hidden'>
 					{results.map((result, id) => (
 						<SearchResult
 							result={result}
