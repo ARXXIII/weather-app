@@ -6,7 +6,7 @@ const Footer = () => {
 
 	return (
 		<footer>
-			<a href='https://github.com/PICKLEGENT' rel='noreferrer' target='_blank'>
+			<a href='https://github.com/ARXXIII' rel='noreferrer' target='_blank'>
 				<Box className='p-8 text-center text-2xl text-neutral-100 tracking-wide bg-black-blue rounded-xl'>
 					<p>{t('author')}</p>
 				</Box>
